@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-pixel {
+    font-family: 'Press Start 2P', monospace, cursive;
+  }
+  .font-retro {
+    font-family: 'VT323', monospace;
+  }
+}
+
+/* Global pixel rendering */
+* {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+body {
+  background-color: #1a1033;
+  color: #ffffff;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* Hard pixel buttons */
+.pixel-btn {
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0 #000000;
+  transition: none;
+  cursor: pointer;
+}
+
+.pixel-btn:hover {
+  filter: brightness(1.15);
+}
+
+.pixel-btn:active, .pixel-btn-active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 #000000 !important;
+}
+
+/* Hard pixel panels */
+.pixel-box {
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  background-color: #3b2a6e;
+}
+
+/* Classic RPG Double Border Dialog */
+.pixel-rpg-dialog {
+  border: 4px solid #ffd23f;
+  outline: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000000, inset 0 0 0 2px #000000;
+  background-color: #24174d;
+}
+
+/* Screen Shake */
+@keyframes screen-shake {
+  0% { transform: translate(0, 0); }
+  15% { transform: translate(-6px, 4px); }
+  30% { transform: translate(6px, -4px); }
+  45% { transform: translate(-4px, -3px); }
+  60% { transform: translate(5px, 3px); }
+  75% { transform: translate(-2px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+
+.animate-shake {
+  animation: screen-shake 0.4s steps(6) 1;
+}
+
+/* Red damage flash */
+@keyframes red-flash {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.4; }
+}
+
+.animate-flash-red {
+  animation: red-flash 0.3s steps(3) 1;
+}
+
+/* Green victory flash */
+@keyframes green-flash {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.35; }
+}
+
+.animate-flash-green {
+  animation: green-flash 0.25s steps(2) 1;
+}
+
+/* Frame-by-frame 2-step idle breathing */
+@keyframes pixel-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-pixel-idle {
+  animation: pixel-idle 1s steps(2) infinite;
+}
+
+/* Flashing cursor */
+@keyframes pixel-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-pixel-blink {
+  animation: pixel-blink 0.7s steps(1) infinite;
+}
+
+/* CRT Scanlines */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.35) 50%
+  );
+  background-size: 100% 4px;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SAP QA Simulator - Masterboi Edition",
+  "description": "Simulador interativo e gamificado de testes de qualidade (QA) SAP nos módulos MM, SD, FI/CO e rastreabilidade para o ecossistema Masterboi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
