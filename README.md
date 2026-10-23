@@ -3,7 +3,6 @@
 Simulador interativo de testes de qualidade (QA) e homologação de processos SAP nos módulos **MM (Compras e Suprimentos)**, **SD (Vendas e Expedição)**, **FI/CO (Financeiro e Controladoria)** e **Rastreabilidade/SIF**
 
 ---
-
 ##  Como testar agora mesmo 
 
 
